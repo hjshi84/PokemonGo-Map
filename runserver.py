@@ -49,7 +49,8 @@ if __name__ == '__main__':
     create_tables(db)
 
     position = get_pos_by_name(args.location)
-    position =[139.44,35.39,0]
+    position=[51.5073509,-0.1277583,0]
+    #position =[35.6894875,139.6917064,0]
     if not any(position):
         log.error('Could not get a position by name, aborting.')
         sys.exit()
@@ -91,6 +92,7 @@ if __name__ == '__main__':
     config['ROOT_PATH'] = app.root_path
     config['GMAPS_KEY'] = args.gmaps_key
     config['REQ_SLEEP'] = args.scan_delay
+    args.port=3000
 
     if args.no_server:
         # This loop allows for ctrl-c interupts to work since flask won't be holding the program open
