@@ -49,6 +49,7 @@ if __name__ == '__main__':
     create_tables(db)
 
     position = get_pos_by_name(args.location)
+    position =[139.44,35.39,0]
     if not any(position):
         log.error('Could not get a position by name, aborting.')
         sys.exit()
